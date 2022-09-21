@@ -15,8 +15,3 @@
 * Pull the repo from https://github.com/Garret-Gallant/bandmate-mono-repo
 * Run 'bundle install' in the terminal to pull all necessary Ruby dependencies
 * Run npm install --prefix frontend to pull all necessary React dependencies
-
-
-
-
-
