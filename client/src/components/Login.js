@@ -35,7 +35,7 @@ const Login = ( {toggleCreateAccount} ) => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button type="submit">
-        <Link to='home'>
+        <Link to='/home'>
           Login
         </Link>
       </button>

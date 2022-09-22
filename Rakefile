@@ -17,5 +17,5 @@ end
 
 desc 'start react frontend in browser'
 task :start_react do
-  sh 'npm run start --prefix client'
+  sh 'npm run start --prefix client -p 4000'
 end
