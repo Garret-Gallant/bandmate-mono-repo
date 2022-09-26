@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   resources :bands, only: [:index, :create, :show, :update, :destroy]
   resources :join_user_bands, only: [:index]
   resources :demos, only: [:index, :show, :create, :destroy]
-  resources :users, only: [:index, :create, :show, :update, :destroy]
+  resources :users, only: [:index, :update, :destroy]
   
   get '/hello', to: 'application#hello_world'
-  get '/me', to: 'user#show'
+  get '/me', to: 'users#show'
+  post '/signup', to: 'users#create'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  
 end

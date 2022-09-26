@@ -2,18 +2,18 @@ class UsersController < ApplicationController
 skip_before_action :authenticate_user, only: [:create, :index]
 
 def index
-  user = User.find_by(params[:user_id])
+  user = User.all
   render json: user
 end
 
 def create
-  user = User.create(user_params)
-  render json: user_params
+  user = User.create!(user_params)
+  session[:user_id] = user.id
+  render json: user
 end
 
 def show
-  found_user = User.find_by(session[:user_id])
-  render json: found_user
+  render json: @current_user
 end
 
 def update
@@ -23,13 +23,14 @@ def update
 end
 
 def destroy
-  user = User.find_by(session[:user_id])
+  user = User.find(params[:id])
   user.destroy
 end
 
 private
 
 def user_params
-  params.permit(:username, :password_digest, :instrument, :fav_genre, :avatar, :bio)
+  params.permit(:username, :password, :instrument, :fav_genre, :avatar, :bio)
 end
+
 end

@@ -1,16 +1,32 @@
 import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ( {currentUser} ) => {
   
+  const handleLogout = () => {
+    fetch('logout', {method: 'DELETE'})
+    alert('you have signed out of your account!')
+  }
 
   return (
     <>
-      <NavLink className="nav-button" to="/home">Home</NavLink>
-      <NavLink className="nav-button" to="/browse">Browse Band Mates</NavLink>
-      <NavLink className="nav-button" to="/demo-manager">Demo Manager</NavLink>
-      <NavLink className="nav-button" to="/band-manager">Band Manager</NavLink>
-      <NavLink className="nav-button" to="/user-profile">Profile</NavLink>
-      <NavLink className="nav-button" to="/login">Logout</NavLink>
+      <button>
+        <NavLink to="/home">Home</NavLink>
+      </button>
+      <button>
+        <NavLink to="/browse">Browse Band Mates</NavLink>
+      </button>
+      <button>
+        <NavLink to="/demo-manager">Demo Manager</NavLink>
+      </button>
+      <button>
+        <NavLink to="/band-manager">Band Manager</NavLink>
+      </button>
+      <button>
+        <NavLink to="/user-profile">Profile</NavLink>
+      </button>
+      <button onClick={handleLogout}>
+        Logout
+      </button>
     </>
   )
 }

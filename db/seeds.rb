@@ -1,12 +1,12 @@
 p "Seeding database..."
 #create users
-admin = User.create(username: 'admin', password_digest: 'password', instrument: 'keyboard', fav_genre: 'Progressive House', avatar: Faker::Avatar.image(size: "50x50", format: "jpg"), 
+admin = User.create(username: 'admin', password: 'password', instrument: 'keyboard', fav_genre: 'Progressive House', avatar: Faker::Avatar.image(size: "50x50", format: "jpg"), 
 bio: 'I am the banhammer, respect eachother, if you criticize someone please be constructive', is_admin?: true)
 
-gerticus = User.create(username: 'Gerticus', password_digest: 'Guitarman20', instrument: 'Guitar', fav_genre: 'Metalcore', avatar: Faker::Avatar.image(size: "50x50", format: "jpg"), 
+gerticus = User.create(username: 'Gerticus', password: 'Guitarman20', instrument: 'Guitar', fav_genre: 'Metalcore', avatar: Faker::Avatar.image(size: "50x50", format: "jpg"), 
 bio: 'Im also an admin because I made the site, but check out my demos and let me know if youre a metal drummer!', is_admin?: true)
 
-test_user = User.create(username: 'John Smith', password_digest: 'testU$er99', instrument: 'Drums', fav_genre: 'Pop', avatar: Faker::Avatar.image(size: "50x50", format: "jpg"), 
+test_user = User.create(username: 'John Smith', password: 'testU$er99', instrument: 'Drums', fav_genre: 'Pop', avatar: Faker::Avatar.image(size: "50x50", format: "jpg"), 
 bio: 'I am a test user, feel free to message me but I likely wont respond', is_admin?: true)
 
 #create demo tracks

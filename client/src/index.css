@@ -1,8 +1,20 @@
-input {
+@tailwind base;
+@tailwind components;
+@tailwind uutilities;
+
+@layer components {
+
+  input {
   @apply text-black align-super border-2 rounded-md ml-1 flex flex-col 
   items-center justify-center mt-2;
-}
-
-.nav-button {
+  }
+  
+  button {
   @apply bg-black border-white text-white font-bold my-4 py-1 px-4 border rounded-full ml-2 mb-14;
+  }
+  
+  .nav-button {
+  @apply bg-black border-white text-white font-bold my-4 py-1 px-4 border rounded-full ml-2 mb-14;
+  }
+
 }

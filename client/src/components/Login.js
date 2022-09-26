@@ -1,28 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
-const Login = ( {toggleCreateAccount} ) => {
+const Login = ( {toggleCreateAccount, onLogin} ) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [errors, setErrors] = useState([])
+  const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    fetch('/login', {
+    fetch('login', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(username, password)
+      body: JSON.stringify( {username, password} )
     })
-    .then((res) => res.json())
-    // .then((user) => onLogin(user))
-  }
+    .then((res) => {
+      if (res.ok) {
+        res.json().then(user => {
+          onLogin(user)
+          navigate('/')
+      })
+    } else {
+      res.json().then(json => setErrors(json.errors))
+    }
+  })
+}
 
   return (
     <div>
+      {/* <p>{errors}</p> */}
     <form onSubmit={handleSubmit}>
-      <label>Username/email: </label>
+      <label>Username: </label>
         <input 
         type = 'text'
         value={username}
@@ -34,10 +45,8 @@ const Login = ( {toggleCreateAccount} ) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type="submit">
-        <Link to='/home'>
-          Login
-        </Link>
+      <button type='submit'>
+        Login
       </button>
       <button onClick={toggleCreateAccount}>
         Create Account
