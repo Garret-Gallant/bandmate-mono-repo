@@ -32,7 +32,7 @@ const Login = ( {toggleCreateAccount, onLogin} ) => {
   return (
     <div>
       {/* <p>{errors}</p> */}
-    <form onSubmit={handleSubmit}>
+    <form className='login-form'>
       <label>Username: </label>
         <input 
         type = 'text'
@@ -45,12 +45,15 @@ const Login = ( {toggleCreateAccount, onLogin} ) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type='submit'>
+
+      <button className='landing-button' onClick={handleSubmit}>
         Login
       </button>
-      <button onClick={toggleCreateAccount}>
-        Create Account
+
+      <button className='landing-button' onClick={toggleCreateAccount}>
+        Sign Up
       </button>
+
     </form>
     </div>
   )

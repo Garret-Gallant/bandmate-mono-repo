@@ -1,20 +1,33 @@
 @tailwind base;
 @tailwind components;
-@tailwind uutilities;
+@tailwind utilities;
 
 @layer components {
 
   input {
-  @apply text-black align-super border-2 rounded-md ml-1 flex flex-col 
-  items-center justify-center mt-2;
+    @apply px-2 py-2 relative rounded text-base 
+    border outline-none focus:outline-none focus:ring w-full 
+    flex flex-col ml-auto mr-auto border-2 w-fit pl-4 pr-4 mb-6;
   }
   
   button {
-  @apply bg-black border-white text-white font-bold my-4 py-1 px-4 border rounded-full ml-2 mb-14;
+  @apply font-bold my-4 py-1 px-4 border rounded-full ml-2 mb-14;
+  }
+
+  .landing-button {
+  @apply flex flex-col ml-auto mr-auto border-2 w-fit pl-4 pr-4 mb-6;
+  }
+
+  .login-form {
+    @apply flex flex-col ml-auto mr-auto border-2 w-fit pl-4 pr-4 mb-6;
+  }
+
+  .signup-form {
+    @apply flex flex-col ml-auto mr-auto border-2 w-fit pl-4 pr-4 mb-6;
   }
   
   .nav-button {
-  @apply bg-black border-white text-white font-bold my-4 py-1 px-4 border rounded-full ml-2 mb-14;
+  @apply font-bold my-4 py-1 px-4 border rounded-full ml-2 mb-14;
   }
 
 }

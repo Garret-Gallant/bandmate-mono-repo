@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const NavBar = ( {currentUser} ) => {
   
@@ -24,8 +24,8 @@ const NavBar = ( {currentUser} ) => {
       <button>
         <NavLink to="/user-profile">Profile</NavLink>
       </button>
-      <button onClick={handleLogout}>
-        Logout
+      <button>
+      <NavLink to='/login' onClick={handleLogout}>Logout</NavLink>
       </button>
     </>
   )

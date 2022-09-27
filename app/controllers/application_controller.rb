@@ -16,10 +16,10 @@ private
     render json: {errors: {User: "You don't have access"} }, status: :unauthorized unless @current_user
   end
 
-  # def authorized
-  #   permitted = current_user.is_admin?
-  #   render json: {errors: {User: "You don't have access"} }, status: :unauthorized
-  # end
+  def authorized
+    permitted = current_user.is_admin?
+    render json: {errors: {User: "You don't have access"} }, status: :unauthorized
+  end
 
   def record_not_found(err)
     render json: { error: "#{err.model} not found" }, status: :not_found
