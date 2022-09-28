@@ -5,8 +5,9 @@ import { useState } from 'react';
 const Login = ( {toggleCreateAccount, onLogin} ) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const [errors, setErrors] = useState([])
+  const [errors, setErrors] = useState("")
   const navigate = useNavigate()
+  console.log(errors)
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,14 +25,14 @@ const Login = ( {toggleCreateAccount, onLogin} ) => {
           navigate('/')
       })
     } else {
-      res.json().then(json => setErrors(json.errors))
+      setErrors("Invalid username or password, please try again")
     }
   })
 }
 
   return (
     <div>
-      {/* <p>{errors}</p> */}
+      <p>{errors}</p>
     <form className='login-form'>
       <label>Username: </label>
         <input 

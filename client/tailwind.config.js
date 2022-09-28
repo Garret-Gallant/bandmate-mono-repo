@@ -1,27 +1,43 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
-    screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
-    },
-    colors: {
-      
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      '100%': '100%',
+      '16': '4rem',
     },
     extend: {
-      spacing: {
-        128: "32rem",
-        144: "36rem",
-      },
-      borderRadius: {
-        "4xl": "2rem",
-      },
+      colors:{
+        primary: "#ff4800",
+        blue: {
+          450: '#5F99F7'
+        },
+      }
     },
-    plugins: [],
+    screens: {
+      'tablet': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      'sm': '650px',
+      'md': '1030px',
+      'lg': '1100px',
+      'x-lg': '1300px',
+      '2x-lg': '1500px'
+    },
   },
-};
+  plugins: [],
+}
+
+
 

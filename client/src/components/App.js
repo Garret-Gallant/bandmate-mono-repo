@@ -35,7 +35,7 @@ function App() {
   return (
     <div>
       <div>
-        <Navbar currentUser={currentUser} />
+        <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       </div>
       <Routes>
         <Route
