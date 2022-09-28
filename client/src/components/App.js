@@ -31,9 +31,8 @@ function App() {
     })
   }, [])
 
-
   return (
-    <div>
+    <div className='bg-hero h-screen w-screen'>
       <div>
         <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       </div>
@@ -56,9 +55,9 @@ function App() {
         />
         <Route path="/" element={<Home />} />
         <Route path="/browse" element={<Browse />} />
-        <Route path="/demo-manager" element={<DemoManager />} />
-        <Route path="/band-manager" element={<BandManager />} />
-        <Route path="/user-profile" element={<Profile />} />
+        <Route path="/demo-manager" element={<DemoManager currentUser={currentUser} />} />
+        <Route path="/band-manager" element={<BandManager currentUser={currentUser} />} />
+        <Route path="/user-profile" element={<Profile currentUser={currentUser} />} />
       </Routes>
     </div>
   );

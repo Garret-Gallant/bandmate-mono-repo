@@ -1,8 +1,15 @@
-const Profile = () => {
+import { useEffect } from 'react'
 
+const Profile = ( {currentUser} ) => {
+
+  // to get user profile by id
 
   return(
-    <>Profile</>
+    <>
+    <p>Username: {currentUser.username}</p>
+    <br/>
+    <p>Bio: {currentUser.bio}</p>
+    </>
   )
 }
 

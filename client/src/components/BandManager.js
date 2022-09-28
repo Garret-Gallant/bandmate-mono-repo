@@ -1,8 +1,7 @@
-const BandManager = () => {
-
+const BandManager = ( {currentUser} ) => {
 
   return(
-    <>Band Manager</>
+    <p>Band Manager</p>
   )
 }
 

@@ -6,12 +6,24 @@
 
   input {
     @apply px-2 py-2 relative rounded text-base
-    outline-none focus:outline-none focus:ring w-full
+    outline-current to-teal-400 outline-none focus:outline-none focus:ring w-full
     flex flex-col ml-auto mr-auto border-2 pl-4 pr-4 mb-6;
   }
   
   button {
-    @apply font-bold my-4 py-1 px-4 border rounded-full ml-2;
+    @apply font-bold my-4 py-1 px-4 text-teal-400 border border-teal-400 rounded-full ml-2;
+  }
+
+  p {
+    @apply text-teal-400
+  }
+
+  h4 {
+    @apply text-teal-400
+  }
+
+  label {
+   @apply text-teal-400
   }
 
   .landing-button {

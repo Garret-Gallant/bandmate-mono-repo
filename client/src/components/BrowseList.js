@@ -10,7 +10,7 @@ const BrowseList = ( { user } ) => {
           <p>{username}</p>
           <p>{instrument}</p>
           <audio controls>
-            <source src='./assets/gerticus-test.mp3' type='audio/mp3' />
+            <source src='../assets/gerticus-test.mp3' type='audio/mp3' />
           </audio>
           <p>{fav_genre}</p>
         </div>

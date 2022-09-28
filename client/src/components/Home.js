@@ -1,6 +1,6 @@
 const Profile = () => {
   return (
-    <div className='bg-gradient-to-b from-slate-900 to-slate-300 h-160 w-full relative'>
+    <div>
     <div className="flex h-screen justify-center items-center">
       <div className="text-center mb-80">
         <h4 className="font-bold text-2xl">Welcome to Bandmate!</h4>

@@ -12,11 +12,12 @@ module.exports = {
       '16': '4rem',
     },
     extend: {
-      colors:{
-        primary: "#ff4800",
-        blue: {
-          450: '#5F99F7'
-        },
+      colors: {
+        'green': 'emerald-500',
+        'darkgreen': 'emerald-700'
+      },
+      backgroundImage: {
+        'hero': "url('./assets/congruent_outline.png')",
       }
     },
     screens: {

@@ -5,16 +5,19 @@ class DemosController < ApplicationController
   end
   
   def create
-    # will contain whats needed to attach audio files after upload
-  end
-
-  def latest
-    @demo = Demo.last
+    demo = Demo.create!(demo_params)
+    # demo.attach(params[:file])
     render json: demo
   end
+
+  # def latest
+  #   @demo = Demo.last
+  #   render json: demo
+  # end
   
   def show
     demo = Demo.find_by(params[:id])
+    render json: demo
   end
   
   def destroy
