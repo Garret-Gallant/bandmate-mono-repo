@@ -16,7 +16,6 @@ const DemoManager = ({ currentUser }) => {
     };
     fetch('demos', postReqObj)
     .then(r => r.json())
-    
   };
 
   const onSongAdded = (e) => {
@@ -26,12 +25,12 @@ const DemoManager = ({ currentUser }) => {
   };
 
   return (
-    <>
+    <div>
       <p>allow user to upload new demos at the top</p>
       <p>Map all current user demos here</p>
       <br />
       <form>
-        <label>Add New Demo</label>
+        <label className='relativetext-base outline-none'>Add New Demo</label>
         <br/>
         <label>
           Name
@@ -42,7 +41,7 @@ const DemoManager = ({ currentUser }) => {
           <input type="file" accept='.mp3, .wav' onChange={onSongAdded}/>
         </label>
       </form>
-    </>
+    </div>
   );
 };
 
