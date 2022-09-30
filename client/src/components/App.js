@@ -9,10 +9,12 @@ import Browse from "./Browse";
 import DemoManager from "./DemoManager";
 import BandManager from "./BandManager";
 import Profile from "./Profile";
+import Footer from "./Footer"
 
 function App() {
   const [createAccount, setCreateAccount] = useState(true);
   const [currentUser, setCurrentUser] = useState(null); 
+
   // Above is passed as onLogin, onSignup to respective components 
 
   const toggleCreateAccount = () => {
@@ -23,7 +25,7 @@ function App() {
   // make a state dependent on current session
 
   useEffect(() => {
-    fetch('me')
+    fetch('/me')
     .then ((res) => {
       if (res.ok) {
         res.json().then(user => setCurrentUser(user))
@@ -32,10 +34,8 @@ function App() {
   }, [])
 
   return (
-    <div className='bg-hero h-screen w-screen'>
-      <div>
-        <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
-      </div>
+    <div>
+      <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       <Routes>
         <Route
           path="/login"
@@ -59,6 +59,7 @@ function App() {
         <Route path="/band-manager" element={<BandManager currentUser={currentUser} />} />
         <Route path="/user-profile" element={<Profile currentUser={currentUser} />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

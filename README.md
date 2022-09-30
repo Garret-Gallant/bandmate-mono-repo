@@ -31,15 +31,16 @@ A browsing resource to find and collaborate with other musicians that are intere
 
 # Stretch Goals
 
-* Allow users to create bands together and post album's demo's, etc. under the band name
-* Allow users to DM eachother via websockets
+* Allow users to create bands together and post album's demo's, etc. under the band name.
+* Allow users to DM eachother via websockets.
 * Integrate bandcamp to allow bands to post and sell music, merch, etc.
 
 # Technologies used
 
-* Howler.js for clean audio file formatting and styling on frontend.
-* Amazon AWS S3 for hosting all uploaded files remotely
-* Active Storage for Amazon S3 and local hosting mp3/wav files
+* Amazon AWS S3 Cloud Storage for hosting all uploaded files remotely.
+* Active Storage for Amazon S3 and local hosting mp3/wav files.
+* Tailwindcss, Howler.js, and Heroicons for styling.
+
 
 
 

@@ -3,9 +3,7 @@ import BrowseList from './BrowseList'
 
 const Browse = () => {
   const [users, setUsers] = useState([])
-  // const [demos, setDemos] = useState([])
-
-  // get all users
+  
   useEffect(() => {
     fetch('users')
     .then((r) =>{ if (r.ok) {
@@ -16,18 +14,6 @@ const Browse = () => {
       }
     })
   }, [])
-
-  // get all demos
-  // useEffect(() => {
-  //   fetch('demos')
-  //   .then((r) =>{ if (r.ok) {
-  //   r.json().then((demos) => setDemos(demos))
-  //     }
-  //     else {
-  //       throw new Error("Unable to retrieve user demos");
-  //     }
-  //   })
-  // }, [])
 
   return(
     <>

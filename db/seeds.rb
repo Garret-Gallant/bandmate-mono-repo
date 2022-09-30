@@ -10,7 +10,7 @@ test_user = User.create(username: 'John Smith', password: 'testU$er99', instrume
 bio: 'I am a test user, feel free to message me but I likely wont respond', is_admin?: true)
 
 #create demo tracks
-demo1 = Demo.create(name: "sub with local audio file eventually", audio: "sub with local audio file eventually", total_plays: 0, user_id: admin.id, is_favorite?: true)
+demo1 = Demo.create(name: "SONG TITLE", audio: "SONG LINK", total_plays: 0, user_id: admin.id, is_favorite?: true)
 demo2 = Demo.create(name: "Babtism By Fire X", audio: "Babtism By Fire X", total_plays: 27, user_id: gerticus.id, is_favorite?: true)
 demo2 = Demo.create(name: "I am a test song to be replaced by an Active Storage file", audio: "I am a test song to be replaced by an Active Storage file", total_plays: 999, user_id: test_user.id, is_favorite?: false)
 

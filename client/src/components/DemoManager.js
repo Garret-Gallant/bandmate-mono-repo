@@ -1,46 +1,56 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const DemoManager = ({ currentUser }) => {
-  
   const [demo, setDemo] = useState(null);
+  const [demoName, setDemoName] = useState("")
+  const [userDemoArr, setUserDemoArr] =useState([])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let userDemo = new FormData()
-    const postReqObj = {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: userDemo,
-    };
-    fetch('demos', postReqObj)
-    .then(r => r.json())
-  };
+  // Populate user demos into stateful array
+  const userDemos = currentUser.demos
+  const userDemoList = userDemos.forEach((userDemo) => userDemoArr.push(userDemo))
 
   const onSongAdded = (e) => {
-    // set file in state
+    // shovel file into state upon file upload
     const targetNewDemo = e.target.files[0];
     setDemo(targetNewDemo);
   };
 
   return (
     <div>
-      <p>allow user to upload new demos at the top</p>
-      <p>Map all current user demos here</p>
-      <br />
-      <form>
-        <label className='relativetext-base outline-none'>Add New Demo</label>
-        <br/>
-        <label>
-          Name
-          <input type="text" />
-        </label>
-        <label>
-          MP3
-          <input type="file" accept='.mp3, .wav' onChange={onSongAdded}/>
-        </label>
-      </form>
+      <div className='relative left-2/3 mt-10'>
+        {userDemoArr.map((demo) => {
+          return (
+          <>
+            <p>{demo.name}</p>
+            <audio controls>
+              <source src={demo.audio} type='audio/mp3'></source>
+            </audio>
+            <p>{demo.total_plays}</p>
+          </>
+        )
+        })}
+      </div>
+      {/* FORM BELOW */}
+      <div className="fixed top-20 text-center w-1/5 left-20">
+        <br />
+            <form>
+              <label className='relative text-xl outline-none'>Add a New Demo</label>
+              <br/>
+              <br/>
+              <label>
+                Name
+                <input 
+                type="text"
+                className='text-black'
+                onChange={(e) => setDemoName(e.target.value)}
+                />
+              </label>
+              <label>
+                MP3
+                <input type="file" accept='.mp3, .wav' onChange={onSongAdded}/>
+              </label>
+            </form>
+          </div>
     </div>
   );
 };

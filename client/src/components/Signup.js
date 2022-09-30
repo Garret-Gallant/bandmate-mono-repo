@@ -8,6 +8,7 @@ const Signup = ({ toggleCreateAccount, onSignup }) => {
   const [instrument, setInstrument] = useState("");
   const [genre, setGenre] = useState("");
   const [bio, setBio] = useState("");
+  const defaultAvatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png?w=360'
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const Signup = ({ toggleCreateAccount, onSignup }) => {
         instrument,
         genre,
         bio,
+        avatar: defaultAvatar
       }),
     })
       .then((res) => res.json())
@@ -30,39 +32,32 @@ const Signup = ({ toggleCreateAccount, onSignup }) => {
     alert("Account created, you have been signed in to your new profile.");
   };
 
-  console.log(bio)
-
   return (
     <div>
       <form className='signup-form'>
         <label>Name: </label>
         <input
           type="text"
-          value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <label>Username: </label>
         <input
           type="text"
-          value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <label>Password: </label>
         <input
           type="password"
-          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <label>Main Instrument: </label>
         <input
           type="text"
-          value={instrument}
           onChange={(e) => setInstrument(e.target.value)}
         />
         <label>Favorite Genre: </label>
         <input
           type="text"
-          value={genre}
           onChange={(e) => setGenre(e.target.value)}
         />
         <label>Add Bio? (This can be added/updated later) </label>
@@ -71,10 +66,9 @@ const Signup = ({ toggleCreateAccount, onSignup }) => {
           class='h-20 border-2 focus:ring rounded'
           name='paragraph-text'
           type="text"
-          value={bio}
           onChange={(e) => setBio(e.target.value)}
         />
-        <button className='landing-button' onClick={handleSubmit}>Create Account</button>
+        <NavLink to="/" className='nav-button right-2 text-center mb-4' onClick={handleSubmit}>Create Account</NavLink>
         <button className='landing-button' onClick={toggleCreateAccount}>Back to log in</button>
       </form>
     </div>

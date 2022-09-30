@@ -1,8 +1,8 @@
 const Profile = () => {
   return (
     <div>
-    <div className="flex h-screen justify-center items-center">
-      <div className="text-center mb-80">
+    <div className="fixed inset-0 top-1/3">
+      <div className="text-center">
         <h4 className="font-bold text-2xl">Welcome to Bandmate!</h4>
         <br />
         <p>

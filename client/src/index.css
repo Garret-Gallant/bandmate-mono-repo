@@ -7,11 +7,16 @@
   input {
     @apply px-2 py-2 relative rounded text-base
     outline-current to-teal-400 outline-none focus:outline-none focus:ring w-full
-    flex flex-col ml-auto mr-auto border-2 pl-4 pr-4 mb-6;
+    flex flex-col ml-auto mr-auto border-2 pl-4 pr-4 mb-6 mt-2;
   }
   
   button {
-    @apply font-bold my-4 py-1 px-4 text-teal-400 border border-teal-400 rounded-full ml-2;
+    @apply font-bold my-4 py-1 px-4 text-teal-400 border border-teal-400 rounded-full ml-4
+    transform transition duration-500 hover:scale-110 hover:bg-cyan-900;
+  }
+
+  html {
+    @apply bg-hero min-h-screen
   }
 
   p {
@@ -35,15 +40,15 @@
   }
 
   .signup-form {
-    @apply flex flex-col ml-auto mr-auto border-2 w-fit pl-4 pr-4 mb-6;
+    @apply relative bottom-10 flex flex-col ml-auto mr-auto border-2 w-fit pl-4 pr-4 mb-6;
   }
   
   .nav-button {
-    @apply font-bold my-4 py-1 px-4 border rounded-full ml-2 mb-14;
+    @apply font-bold relative top-4 py-2 px-4 text-teal-400 border border-teal-400 rounded-full ml-4
+    transform transition duration-500 hover:scale-110 hover:bg-cyan-900;
   }
 
   .user-demo-card {
     @apply border-2 mb-4 mt-4 flex flex-col ml-auto mr-auto w-60 pl-4 pr-4
   }
-
 }

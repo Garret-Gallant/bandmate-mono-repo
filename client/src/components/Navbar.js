@@ -12,36 +12,26 @@ const NavBar = ({ currentUser, setCurrentUser }) => {
   return (
     <>
       {currentUser ? (
-        <div>
-          <button>
-            <NavLink to="/">Home</NavLink>
-          </button>
-          <button>
-            <NavLink to="/browse">Browse Band Mates</NavLink>
-          </button>
-          <button>
-            <NavLink to="/demo-manager">Demo Manager</NavLink>
-          </button>
-          <button>
-            <NavLink to="/band-manager">Band Manager</NavLink>
-          </button>
-          <button>
-            <NavLink to="/user-profile">Profile</NavLink>
-          </button>
-          <button>
-            <NavLink to="/login" onClick={handleLogout}>
-              Logout
-            </NavLink>
-          </button>
+        <div className='relative mb-16'>
+          <div className='fixed top-0 w-screen bg-gradient-to-b from-teal-700 to-transparent h-16'>
+            <NavLink to="/" className='nav-button'>Home</NavLink>
+            <NavLink to="/browse" className='nav-button'>Browse Band Mates</NavLink>
+            <NavLink to="/demo-manager" className='nav-button'>Demo Manager</NavLink>
+            <NavLink to="/band-manager" className='nav-button'>Band Manager</NavLink>
+            <NavLink to="/user-profile" className='nav-button'>Profile</NavLink>
+            <NavLink to="/login" onClick={handleLogout} className='nav-button'>Logout</NavLink>
+          </div>
         </div>
       ) : (
-        <div>
-          <button>
-            <NavLink to="/">Home</NavLink>
-          </button>
-          <button>
-            <NavLink to="/login">Login</NavLink>
-          </button>
+        <div className='relative mb-16'>
+          <div>
+            <button>
+              <NavLink to="/">Home</NavLink>
+            </button>
+            <button>
+              <NavLink to="/login">Login</NavLink>
+            </button>
+          </div>
         </div>
       )}
     </>

@@ -7,7 +7,6 @@ const Login = ( {toggleCreateAccount, onLogin} ) => {
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState("")
   const navigate = useNavigate()
-  console.log(errors)
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,17 +36,15 @@ const Login = ( {toggleCreateAccount, onLogin} ) => {
       <label>Username: </label>
         <input 
         type = 'text'
-        value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <label>Password: </label>
         <input 
         type = 'password'
-        value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button className='landing-button' onClick={handleSubmit}>
+      <button className='nav-button right-2 text-center mb-8' onClick={handleSubmit}>
         Login
       </button>
 

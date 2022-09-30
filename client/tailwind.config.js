@@ -18,7 +18,15 @@ module.exports = {
       },
       backgroundImage: {
         'hero': "url('./assets/congruent_outline.png')",
-      }
+      },
+      animation: {
+        shine: "shine 1s",
+      },
+      keyframes: {
+        shine: {
+          "100%": { left: "125%" },
+        },
+      },
     },
     screens: {
       'tablet': '640px',
