@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 
-const Profile = ( {currentUser} ) => {
+const Profile = ( { currentUser } ) => {
 
   // to get user profile by id
-  console.log(currentUser)
   const username = currentUser.username
   const instrument = currentUser.instrument
   const bio = currentUser.bio

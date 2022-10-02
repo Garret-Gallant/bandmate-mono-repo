@@ -1,9 +1,9 @@
 class DemoSerializer < ActiveModel::Serializer
-  attributes :id, :name, :audio, :total_plays, :is_favorite?
+  include Rails.application.routes.url_helpers
+  attributes :id, :name, :audio, :total_plays, :is_favorite?, :audio_file
   has_one :user
 
-  # def audio
-  #   rails_blob_path(demo.audio, only_path: true) if demo.audio_attached?
-  # end
-
+  def audio_file
+    rails_blob_path(object.audio_file, only_path: true) if object.audio_file.attached?
+  end
 end

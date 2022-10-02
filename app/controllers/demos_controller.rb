@@ -6,8 +6,8 @@ class DemosController < ApplicationController
   
   def create
     demo = Demo.create!(demo_params)
-    # demo.attach(params[:file])
-    render json: demo
+    demo.audio.attach(params[:audio_file])
+    render json: demo, status: :created
   end
 
   # def latest
@@ -28,7 +28,7 @@ class DemosController < ApplicationController
   private 
 
   def demo_params
-    params.permit(:name, :audio)
+    params.permit(:name, :audio_file, :total_plays, :is_favorite?)
   end
 
 end

@@ -1,5 +1,5 @@
 import "../index.css";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
@@ -20,6 +20,8 @@ function App() {
   const toggleCreateAccount = () => {
     setCreateAccount(!createAccount);
   };
+
+  const navigate = useNavigate("")
 
   // fetch all existing user data
   // make a state dependent on current session
