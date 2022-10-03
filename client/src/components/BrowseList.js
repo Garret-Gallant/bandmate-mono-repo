@@ -23,7 +23,7 @@ const BrowseList = ( { user } ) => {
             <p>{instrument}</p>
             <audio controls>
               {/* Favorite demo should always be located at front of user demo array */}
-              <source src={fav_user_demo} type='audio/mp3' />
+              <source src={user.demos[0].audio_file} type='audio/mp3' />
             </audio>
             <p>{fav_genre}</p>
           </div>

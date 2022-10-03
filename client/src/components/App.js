@@ -13,15 +13,13 @@ import Footer from "./Footer"
 
 function App() {
   const [createAccount, setCreateAccount] = useState(true);
-  const [currentUser, setCurrentUser] = useState(null); 
+  const [currentUser, setCurrentUser] = useState(null);
 
   // Above is passed as onLogin, onSignup to respective components 
 
   const toggleCreateAccount = () => {
     setCreateAccount(!createAccount);
   };
-
-  const navigate = useNavigate("")
 
   // fetch all existing user data
   // make a state dependent on current session

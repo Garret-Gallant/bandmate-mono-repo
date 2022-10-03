@@ -51,4 +51,9 @@
   .user-demo-card {
     @apply border-2 mb-4 mt-4 flex flex-col ml-auto mr-auto w-60 pl-4 pr-4
   }
+
+  .demo-button {
+    @apply bg-red-700 text-rose-50 
+    relative text-center
+  }
 }

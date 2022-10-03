@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useInsertionEffect, useState } from "react";
 
 const DemoManager = ({ currentUser }) => {
-  const [demo, setDemo] = useState(null);
+  const [demo, setDemo] = useState(null)
   const [demoName, setDemoName] = useState("")
-  
+  console.log(demo)
+
   const handleDemoSubmit = (e) => {
     e.preventDefault()
 
@@ -20,24 +21,35 @@ const DemoManager = ({ currentUser }) => {
     })
   }
 
-  console.log(currentUser)
   // Populate user demos into array
   let userDemos = currentUser.demos
   const userDemoArr = []
   userDemos.forEach((userDemo) => userDemoArr.push(userDemo))
+  
+  console.log(userDemoArr)
+
+  const handleDelete = () => {
+    fetch(`/demos/${true}`, {
+      method: "DELETE"
+    })
+  }
 
   return (
     <div>
-      <div className='relative left-2/3 mt-10'>
+      <div className='absolute left-2/3'>
         {userDemoArr.map((demo) => {
+          console.log(demo)
           return (
-          <>
-            <p>{demo.name}</p>
-            <audio controls>
-              <source src={demo.audio} type='audio/mp3'></source>
-            </audio>
-            <p>{demo.total_plays}</p>
-          </>
+          <div className='border m-4 p-4'>
+            <div className=''> 
+              <p>{demo.name}</p>
+              <audio controls>
+                <source src={demo.audio_file} type='audio/mp3'></source>
+              </audio>
+              <p>{demo.total_plays}</p>
+            </div>
+            <button className='demo-button' onClick={handleDelete}>{`Delete ${demo.name}?`}</button>
+          </div>
         )
         })}
       </div>

@@ -17,7 +17,7 @@ def show
 end
 
 def update
-  user = User.find_by(session[:user_id])
+  user = User.find_by(params[:user_id])
   user.update(user_params)
   render json: user
 end
