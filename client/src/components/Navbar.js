@@ -13,7 +13,7 @@ const NavBar = ({ currentUser, setCurrentUser }) => {
     <>
       {currentUser ? (
         <div className='relative mb-16'>
-          <div className='fixed top-0 w-screen bg-gradient-to-b from-teal-700 to-transparent h-16'>
+          <div className='fixed top-0 w-screen bg-gradient-to-b from-teal-700 to-transparent h-20 pt-5'>
             <NavLink to="/" className='nav-button'>Home</NavLink>
             <NavLink to="/browse" className='nav-button'>Browse Band Mates</NavLink>
             <NavLink to="/demo-manager" className='nav-button'>Demo Manager</NavLink>

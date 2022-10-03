@@ -10,17 +10,25 @@ const Profile = ( { currentUser } ) => {
   const demos = currentUser.demos.length
   
   return(
-    <>
-    <p>Username: {username}</p>
-    <br />
-    <p>Instrument: {instrument}</p>
-    <br />
-    <p>Bio: {bio}</p>
-    <br />
-    <p>Favorite Genre: {fav_genre}</p>
-    <br />
-    <p>Demo's Uploaded: {demos}</p>
-    </>
+    <div className='fixed w-screen left-10'>
+      <button>Edit Profile</button>
+      <div className='fixed text-left w-1/4 '>
+        <p className='profile-category'>Username: </p>
+        <p>{username}</p>
+        <br />
+        <p className='profile-category'>Instrument: </p>
+        <p>{instrument}</p>
+        <br />
+        <p className='profile-category'>Bio: </p>
+        <p className='break-words'>{bio}</p>
+        <br />
+        <p className='profile-category'>Favorite Genre: </p>
+        <p>{fav_genre}</p>
+        <br />
+        <p className='profile-category'>Demo's Uploaded: </p>
+        <p> {demos}</p>
+      </div>
+    </div>
   )
 }
 

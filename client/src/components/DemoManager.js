@@ -1,4 +1,4 @@
-import { useEffect, useInsertionEffect, useState } from "react";
+import { useState } from "react";
 
 const DemoManager = ({ currentUser }) => {
   const [demo, setDemo] = useState(null)
@@ -38,7 +38,6 @@ const DemoManager = ({ currentUser }) => {
     <div>
       <div className='absolute left-2/3'>
         {userDemoArr.map((demo) => {
-          console.log(demo)
           return (
           <div className='border m-4 p-4'>
             <div className=''> 
@@ -53,28 +52,29 @@ const DemoManager = ({ currentUser }) => {
         )
         })}
       </div>
+
       {/* FORM BELOW */}
       <div className="fixed top-20 text-center w-1/5 left-20">
         <br />
-            <form>
-              <label className='relative text-xl outline-none'>Add a New Demo</label>
-              <br/>
-              <br/>
-              <label>
-                Name
-                <input 
-                type="text"
-                className='text-black'
-                onChange={(e) => setDemoName(e.target.value)}
-                />
-              </label>
-              <label>
-                MP3
-                <input type="file" accept='audio/*' onChange={(e) => setDemo(e.target.files[0])}/>
-              </label>
-              <button onClick={handleDemoSubmit}>Add Demo</button>
-            </form>
-          </div>
+        <form>
+          <label className='relative text-xl outline-none'>Add a New Demo</label>
+          <br/>
+          <br/>
+          <label>
+            Name
+            <input 
+            type="text"
+            className='text-black'
+            onChange={(e) => setDemoName(e.target.value)}
+            />
+          </label>
+          <label>
+            MP3
+            <input type="file" accept='audio/*' onChange={(e) => setDemo(e.target.files[0])}/>
+          </label>
+          <button onClick={handleDemoSubmit}>Add Demo</button>
+        </form>
+      </div>
     </div>
   );
 };
