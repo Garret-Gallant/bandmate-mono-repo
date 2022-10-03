@@ -33,6 +33,7 @@ A browsing resource to find and collaborate with other musicians that are intere
 
 * Allow users to create bands together and post album's demo's, etc. under the band name.
 * Allow users to DM eachother via websockets.
+* Integrate howler sprites for better visual appeal on browselist.
 * Integrate bandcamp to allow bands to post and sell music, merch, etc.
 
 # Technologies used
