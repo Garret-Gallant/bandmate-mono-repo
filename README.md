@@ -25,7 +25,7 @@ A browsing resource to find and collaborate with other musicians that are intere
 
 * Create a profile
 * Upload demo tracks (via demo manager page) and set them as favorites to be seen by other users in the artist browser.
-* Search and filter the artist browser depending on genre, instrument, etc.
+* Search and filter the artist browser depending on genre, usernames, favorites/all, etc.
 * View the artist browser and all audio files within associated with users.
 * View the selected artist profile to check out all demo's uploaded by the selected artist.
 
