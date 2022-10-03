@@ -11,7 +11,7 @@ class DemosController < ApplicationController
   end
   
   def destroy
-    demo = Demo.find_by(params[:id])
+    demo = Demo.find(params[:id])
     demo.destroy
   end
 

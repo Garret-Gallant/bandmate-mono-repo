@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const DemoManager = ({ currentUser }) => {
+const DemoManager = ({ currentUser, allDemos }) => {
   const [demo, setDemo] = useState(null)
   const [demoName, setDemoName] = useState("")
-  console.log(demo)
+  const [demoGenre, setDemoGenre] = useState("")
+  console.log(demoGenre)
+  let userDemos = currentUser.demos
 
   const handleDemoSubmit = (e) => {
     e.preventDefault()
 
     const formData = new FormData()
     formData.append('name', demoName)
+    formData.append('genre', demoGenre)
     formData.append('audio_file', demo)
-    formData.append('total_plays', 0)
-    formData.append('is_favorite?', true)
+    formData.append('is_favorite?', false)
     formData.append('user_id', currentUser.id)
 
     fetch('/demos', {
@@ -21,23 +23,18 @@ const DemoManager = ({ currentUser }) => {
     })
   }
 
-  // Populate user demos into array
-  let userDemos = currentUser.demos
-  const userDemoArr = []
-  userDemos.forEach((userDemo) => userDemoArr.push(userDemo))
-  
-  console.log(userDemoArr)
-
-  const handleDelete = () => {
-    fetch(`/demos/${true}`, {
+  const handleDelete = (id) => {
+    fetch(`/demos/${id}`, {
       method: "DELETE"
     })
+    // .then((r) => r.json())
+    // .then((data) => setuserDemoArr(data))
   }
 
   return (
     <div>
       <div className='absolute left-2/3'>
-        {userDemoArr.map((demo) => {
+        {userDemos.map((demo) => {
           return (
           <div className='border m-4 p-4'>
             <div className=''> 
@@ -45,9 +42,9 @@ const DemoManager = ({ currentUser }) => {
               <audio controls>
                 <source src={demo.audio_file} type='audio/mp3'></source>
               </audio>
-              <p>{demo.total_plays}</p>
+              <p>{demo.genre}</p>
             </div>
-            <button className='demo-button' onClick={handleDelete}>{`Delete ${demo.name}?`}</button>
+            <button className='demo-button' onClick={() => handleDelete(demo.id)}>{`Delete ${demo.name}?`}</button>
           </div>
         )
         })}
@@ -61,16 +58,23 @@ const DemoManager = ({ currentUser }) => {
           <br/>
           <br/>
           <label>
+            MP3
+            <input type="file" accept='audio/*' onChange={(e) => setDemo(e.target.files[0])}/>
+          </label>
+          <label>
             Name
             <input 
             type="text"
-            className='text-black'
+            className="text-black"
             onChange={(e) => setDemoName(e.target.value)}
             />
           </label>
           <label>
-            MP3
-            <input type="file" accept='audio/*' onChange={(e) => setDemo(e.target.files[0])}/>
+            Genre
+            <input 
+            type="text"
+            className="text-black"
+            onChange={(e) => setDemoGenre(e.target.value)}/>
           </label>
           <button onClick={handleDemoSubmit}>Add Demo</button>
         </form>

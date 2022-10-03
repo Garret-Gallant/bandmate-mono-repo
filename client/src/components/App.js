@@ -14,6 +14,7 @@ import Footer from "./Footer"
 function App() {
   const [createAccount, setCreateAccount] = useState(true);
   const [currentUser, setCurrentUser] = useState(null);
+  const [allDemos, setAllDemos] = useState([]);
 
   // Above is passed as onLogin, onSignup to respective components 
 
@@ -29,6 +30,15 @@ function App() {
     .then ((res) => {
       if (res.ok) {
         res.json().then(user => setCurrentUser(user))
+      }
+    })
+  }, [])
+
+  useEffect(() => {
+    fetch('/demos')
+    .then ((res) => {
+      if (res.ok) {
+        res.json().then(data => setAllDemos(data))
       }
     })
   }, [])
