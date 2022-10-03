@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 const DemoManager = ({ currentUser }) => {
   const [demo, setDemo] = useState(null);
   const [demoName, setDemoName] = useState("")
-  const [userDemoArr, setUserDemoArr] = useState([])
   
   const handleDemoSubmit = (e) => {
     e.preventDefault()
@@ -12,7 +11,8 @@ const DemoManager = ({ currentUser }) => {
     formData.append('name', demoName)
     formData.append('audio_file', demo)
     formData.append('total_plays', 0)
-    formData.append('is_favorite?', false)
+    formData.append('is_favorite?', true)
+    formData.append('user_id', currentUser.id)
 
     fetch('/demos', {
       method: 'POST',
@@ -21,14 +21,15 @@ const DemoManager = ({ currentUser }) => {
   }
 
   console.log(currentUser)
-  // Populate user demos into stateful array
-  // const userDemos = currentUser.demos
-  // userDemos.forEach((userDemo) => userDemoArr.push(userDemo))
+  // Populate user demos into array
+  let userDemos = currentUser.demos
+  const userDemoArr = []
+  userDemos.forEach((userDemo) => userDemoArr.push(userDemo))
 
   return (
     <div>
       <div className='relative left-2/3 mt-10'>
-        {/* {userDemoArr.map((demo) => {
+        {userDemoArr.map((demo) => {
           return (
           <>
             <p>{demo.name}</p>
@@ -38,7 +39,7 @@ const DemoManager = ({ currentUser }) => {
             <p>{demo.total_plays}</p>
           </>
         )
-        })} */}
+        })}
       </div>
       {/* FORM BELOW */}
       <div className="fixed top-20 text-center w-1/5 left-20">

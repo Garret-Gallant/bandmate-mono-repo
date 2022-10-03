@@ -5,7 +5,7 @@ class DemosController < ApplicationController
   end
   
   def create
-    demo = Demo.create!(demo_params)
+    demo = Demo.create(demo_params)
     demo.audio.attach(params[:audio_file])
     render json: demo, status: :created
   end
