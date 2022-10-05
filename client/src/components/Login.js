@@ -44,7 +44,7 @@ const Login = ( {toggleCreateAccount, onLogin} ) => {
           onChange={(e) => setPassword(e.target.value)}
         />
   
-        <button className='nav-button right-2 text-center mb-8' onClick={handleSubmit}>
+        <button className='landing-button right-2 text-center mb-8' onClick={handleSubmit}>
           Login
         </button>
     

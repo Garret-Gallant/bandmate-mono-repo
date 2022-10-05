@@ -1,8 +1,12 @@
 import NotFound from './NotFound'
 
-const BrowseList = ( { user, allDemos } ) => {
+const BrowseList = ( { user } ) => {
 
   const { id, username, avatar, fav_genre, instrument } = user
+
+  const showUserDemos = () => {
+
+  }
 
   if (user.demos != 0) {
     return (
@@ -15,7 +19,7 @@ const BrowseList = ( { user, allDemos } ) => {
               {/* Favorite demo should always be located at front of user demo array */}
               <source src={user.demos[0].audio_file} type='audio/mp3' />
             </audio>
-            <p>Demo Genre: {user.demos[0].genre}</p>
+            <button onClick={showUserDemos}>View More {username} Demos!</button>
           </div>
       </div>
     )

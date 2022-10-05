@@ -41,7 +41,3 @@ A browsing resource to find and collaborate with other musicians that are intere
 * Amazon AWS S3 Cloud Storage for hosting all uploaded files remotely.
 * Active Storage for Amazon S3 and local hosting mp3/wav files.
 * Tailwindcss for styling.
-
-
-
-

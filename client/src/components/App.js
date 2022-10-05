@@ -1,5 +1,5 @@
 import "../index.css";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
@@ -9,7 +9,7 @@ import Browse from "./Browse";
 import DemoManager from "./DemoManager";
 import BandManager from "./BandManager";
 import Profile from "./Profile";
-import Footer from "./Footer"
+import Footer from "./Footer";
 
 function App() {
   const [createAccount, setCreateAccount] = useState(true);
@@ -36,7 +36,7 @@ function App() {
 
   useEffect(() => {
     fetch('/demos')
-    .then ((res) => {
+    .then((res) => {
       if (res.ok) {
         res.json().then(data => setAllDemos(data))
       }
@@ -65,7 +65,7 @@ function App() {
         />
         <Route path="/" element={<Home />} />
         <Route path="/browse" element={<Browse />} />
-        <Route path="/demo-manager" element={<DemoManager currentUser={currentUser} />} />
+        <Route path="/demo-manager" element={<DemoManager currentUser={currentUser} allDemos={allDemos} />} />
         <Route path="/band-manager" element={<BandManager currentUser={currentUser} />} />
         <Route path="/user-profile" element={<Profile currentUser={currentUser} />} />
       </Routes>

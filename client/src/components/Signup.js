@@ -68,7 +68,9 @@ const Signup = ({ toggleCreateAccount, onSignup }) => {
           type="text"
           onChange={(e) => setBio(e.target.value)}
         />
-        <NavLink to="/" className='nav-button right-2 text-center mb-4' onClick={handleSubmit}>Create Account</NavLink>
+        <button>
+        <NavLink to="/" className='right-2 text-center mb-4' onClick={handleSubmit}>Create Account</NavLink>
+        </button>
         <button className='landing-button' onClick={toggleCreateAccount}>Back to log in</button>
       </form>
     </div>

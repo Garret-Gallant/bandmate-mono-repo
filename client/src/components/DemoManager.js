@@ -4,8 +4,8 @@ const DemoManager = ({ currentUser, allDemos }) => {
   const [demo, setDemo] = useState(null)
   const [demoName, setDemoName] = useState("")
   const [demoGenre, setDemoGenre] = useState("")
-  console.log(demoGenre)
-  let userDemos = currentUser.demos
+
+  const filteredDemos = allDemos.filter(demo => demo.user.id === currentUser.id)
 
   const handleDemoSubmit = (e) => {
     e.preventDefault()
@@ -34,7 +34,7 @@ const DemoManager = ({ currentUser, allDemos }) => {
   return (
     <div>
       <div className='absolute left-2/3'>
-        {userDemos.map((demo) => {
+        {filteredDemos.map((demo) => {
           return (
           <div className='border m-4 p-4'>
             <div className=''> 
@@ -54,7 +54,7 @@ const DemoManager = ({ currentUser, allDemos }) => {
       <div className="fixed top-20 text-center w-1/5 left-20">
         <br />
         <form>
-          <label className='relative text-xl outline-none'>Add a New Demo</label>
+          <label className='relative text-xl outline-none'>Add a New Demo?</label>
           <br/>
           <br/>
           <label>

@@ -1,7 +1,12 @@
 class DemosController < ApplicationController
   def index
     demo = Demo.all
-    render json: demo
+    render json: demo, status: 200
+  end
+
+  def show
+    userDemos = @current_user.demos
+    render json: userDemos, status: 200
   end
   
   def create
