@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='relative mt-16'>
+    <div className='relative mt-36'>
       <div className='fixed bottom-0 bg-gradient-to-t from-teal-700 to-transparent w-screen'>
         <div className='flex flex-row'>
           <button href='https://github.com/Garret-Gallant' target='_blank'>

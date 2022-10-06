@@ -21,6 +21,8 @@ const DemoCompiler = ( { currentUser, userDemos, handleDelete } ) => {
       method: 'POST',
       body: formData
     })
+
+    alert("Your song has been successfully uploaded! Please refresh the page.")
   }
 
   return(
@@ -65,4 +67,4 @@ const DemoCompiler = ( { currentUser, userDemos, handleDelete } ) => {
     </>
   )
 }
-export default DemoCompiler
+export default DemoCompiler;

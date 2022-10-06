@@ -19,7 +19,7 @@ const BrowseList = ( { user, allDemos } ) => {
 
   if (user.demos != 0) {
     return (
-      <div className='user-demo-card w-fit relative inset-0'>
+      <div className='user-demo-card w-fit relative inset-0 top-10'>
         <img className='w-10 h-10 rounded-full mt-4' src={avatar} /> 
           <div className='user-demo-container'>
             <p>{username}</p>

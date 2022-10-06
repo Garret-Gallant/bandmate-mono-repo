@@ -10,8 +10,6 @@ const BandManager = ( {currentUser} ) => {
     .then(data => setAllBands(data))
   }, [])
 
-
-
   return(
     <div>
     {allBands.map((band) => (
