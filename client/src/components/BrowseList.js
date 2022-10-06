@@ -38,7 +38,7 @@ const BrowseList = ( { user, allDemos } ) => {
               <div>
                 <p>{demo.name}</p>
                 <audio controls>
-                  <source src={demo.audio_file} type='audio/mp3' />
+                  <source volume='0.5' src={demo.audio_file} type='audio/mp3' />
                 </audio>
               </div>
             )}

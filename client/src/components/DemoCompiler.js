@@ -2,7 +2,7 @@ import React from 'react'
 import DemoManager from './DemoManager'
 import { useState } from 'react'
 
-const DemoCompiler = ( {currentUser, userDemos, handleDelete} ) => {
+const DemoCompiler = ( { currentUser, userDemos, handleDelete } ) => {
   const [demo, setDemo] = useState(null)
   const [demoName, setDemoName] = useState("")
   const [demoGenre, setDemoGenre] = useState("")
@@ -56,7 +56,8 @@ const DemoCompiler = ( {currentUser, userDemos, handleDelete} ) => {
             <input 
             type="text"
             className="text-black"
-            onChange={(e) => setDemoGenre(e.target.value)}/>
+            onChange={(e) => setDemoGenre(e.target.value)}
+            />
           </label>
           <button onClick={handleDemoSubmit}>Add Demo</button>
         </form>

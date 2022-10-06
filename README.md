@@ -24,17 +24,18 @@ A browsing resource to find and collaborate with other musicians that are intere
 # A User Can
 
 * Create a profile
-* Upload demo tracks (via demo manager page) and allow modal viewing of all user demos upon button click
-* Search and filter the artist browser depending on genre, usernames, favorites/all, etc.
+* Upload demo tracks (via demo manager page)
+* View a users profile from browser within a modal window
 * View the artist browser and all audio files within associated with users.
 
-# Stretch Goals
+# Roadmap for Future Features
 
 * Allow users to create bands together and post album's demo's, etc. under the band name.
-* Allow users to DM eachother via websockets.
-* Integrate custom audio player so visuals of audio player are better looking
+* Search and filter the artist browser depending on genre, usernames, favorites/all, etc.
+* Allow users to DM eachother via websockets, add optional contact info to user table for signup.
+* Integrate custom audio player so visuals of audio player are better looking.
 * Integrate bandcamp to allow bands to post and sell music, merch, etc.
-* Migrate to AWS S3 Cloud Storage
+* Migrate to AWS S3 Cloud Storage.
 
 # Technologies used
 

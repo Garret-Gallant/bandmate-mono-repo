@@ -23,7 +23,7 @@ class DemosController < ApplicationController
   private 
 
   def demo_params
-    params.permit(:name, :audio, :audio_file, :total_plays, :is_favorite?)
+    params.permit(:name, :audio, :audio_file, :total_plays, :is_favorite?, :user_id)
   end
 
 end

@@ -25,7 +25,6 @@ const Profile = ( { currentUser } ) => {
     // PATCH request to update profile
   }
   
-  
   return(
     <div className='fixed w-screen left-10'>
       <button onClick={toggleEditForm}>Edit Profile</button>

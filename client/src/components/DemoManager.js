@@ -9,7 +9,7 @@ const DemoManager = ({ handleDelete, demo }) => {
             <div className=''> 
               <p>{name}</p>
               <audio controls>
-                <source src={audio_file} type='audio/mp3'></source>
+                <source volume='0.5' src={audio_file} type='audio/mp3'></source>
               </audio>
               <p>{genre}</p>
             </div>
