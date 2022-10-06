@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BrowseList from './BrowseList'
 
-const Browse = () => {
+const Browse = ( { allDemos } ) => {
   const [users, setUsers] = useState([])
   
   useEffect(() => {
@@ -21,6 +21,7 @@ const Browse = () => {
       <BrowseList 
         key={user.id} 
         user={user}  
+        allDemos={allDemos}
       />
     ))}
     </>

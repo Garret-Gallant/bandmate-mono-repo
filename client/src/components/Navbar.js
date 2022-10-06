@@ -16,7 +16,7 @@ const NavBar = ({ currentUser, setCurrentUser }) => {
             <NavLink to="/" className='nav-button'>Home</NavLink>
             <NavLink to="/browse" className='nav-button'>Browse Band Mates</NavLink>
             <NavLink to="/demo-manager" className='nav-button'>Demo Manager</NavLink>
-            {/* <NavLink to="/band-manager" className='nav-button'>Band Manager</NavLink> */}
+            <NavLink to="/band-manager" className='nav-button'>Band Manager</NavLink>
             <NavLink to="/user-profile" className='nav-button'>Profile</NavLink>
             <NavLink to="/login" onClick={handleLogout} className='nav-button'>Logout</NavLink>
           </div>

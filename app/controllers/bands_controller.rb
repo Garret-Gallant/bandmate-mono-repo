@@ -1,18 +1,17 @@
 class BandsController < ApplicationController
 
   def index
-    bands = Bands.all
-    render json: bands
+    render json: Band.all, status: 200
   end
   
   def create
     band = Band.create(band_params)
-    render json: band
+    render json: band, status: :created
   end
   
   def show
     found_band = Band.find_by!(params[:id])
-    render json: found_band
+    render json: found_band, status: 200
   end
   
   def update

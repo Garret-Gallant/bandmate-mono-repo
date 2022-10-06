@@ -15,12 +15,13 @@ function App() {
   const [createAccount, setCreateAccount] = useState(true);
   const [currentUser, setCurrentUser] = useState(null);
   const [allDemos, setAllDemos] = useState([]);
-  const userDemos = allDemos.filter(demo => demo.user.id === currentUser.id)
-  // Above is passed as onLogin, onSignup to respective components 
+  const userDemos = allDemos.filter(demo => demo.user.id === currentUser.id) 
 
   const toggleCreateAccount = () => {
     setCreateAccount(!createAccount);
   };
+
+  console.log(currentUser)
 
   // fetch all existing user data
   // make a state dependent on current session
@@ -38,7 +39,8 @@ function App() {
     fetch('/demos')
     .then((res) => {
       if (res.ok) {
-        res.json().then(data => setAllDemos(data))
+        res.json()
+        .then(data => setAllDemos(data))
       }
     })
   }, [])
@@ -72,7 +74,7 @@ function App() {
           }
         />
         <Route path="/" element={<Home />} />
-        <Route path="/browse" element={<Browse handleDelete={handleDelete} />} />
+        <Route path="/browse" element={<Browse allDemos={allDemos} handleDelete={handleDelete} />} />
         <Route path="/demo-manager" element={<DemoCompiler currentUser={currentUser} userDemos={userDemos} handleDelete={handleDelete} />} />
         <Route path="/band-manager" element={<BandManager currentUser={currentUser} />} />
         <Route path="/user-profile" element={<Profile currentUser={currentUser} />} />

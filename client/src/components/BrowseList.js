@@ -1,15 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import Modal from 'react-modal'
 
-const BrowseList = ( { user } ) => {
+const BrowseList = ( { user, allDemos } ) => {
 
-  const { id, username, avatar, fav_genre, instrument } = user
+  const { username, avatar, instrument } = user
+  const [showModal, setShowModal] = useState(false)
+  const [selectedUser, setSelectedUser] = useState("")
+  const [filteredDemos, setFilteredDemos] = useState([])
 
-  const [modal, setModal] = useState(false)
+  useEffect(() => {
+    setSelectedUser(user.id)
+    setFilteredDemos(allDemos.filter(demo => demo.user.id === selectedUser))
+  }, [showModal])
 
   const showUserDemos = () => {
-    return (
-      <>This is where modal will live</>
-    )
+    setShowModal(true)
   }
 
   if (user.demos != 0) {
@@ -19,12 +24,27 @@ const BrowseList = ( { user } ) => {
           <div className='user-demo-container'>
             <p>{username}</p>
             <p>Demo Title: {user.demos[0].name}</p>
+            <p>{instrument}</p>
             <audio controls>
-              {/* Favorite demo should always be located at front of user demo array */}
               <source src={user.demos[0].audio_file} type='audio/mp3' />
             </audio>
-            <button onClick={showUserDemos}>View More {username} Demos!</button>
+            <button onClick={showUserDemos}>View full {username} profile!</button>
           </div>
+          <Modal isOpen={showModal} className='bg-hero relative w-1/3 rounded-full flex flex-col ml-auto mr-auto border-2 pl-40 pr-4 mb-6 p-14 top-40'>
+            <>
+            <p className='relative text-center right-20 font-bold'>{user.username.toUpperCase()}</p>
+            <p className='relative text-center right-20 mb-5'>{user.bio}</p>
+            {filteredDemos.map((demo) => 
+              <div>
+                <p>{demo.name}</p>
+                <audio controls>
+                  <source src={demo.audio_file} type='audio/mp3' />
+                </audio>
+              </div>
+            )}
+            <button className='relative top-10 right-20' onClick={() => setShowModal(false)}>Return To Main Browser</button>
+            </>
+          </Modal>
       </div>
     )
   }

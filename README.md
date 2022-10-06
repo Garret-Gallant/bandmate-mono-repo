@@ -19,25 +19,26 @@
 # User Experience
 
 * Bandmate.com summary: 
-A browsing resource to find and collaborate with other musicians that are interested in forming a band and outputting music.
+A browsing resource to find and collaborate with other musicians that are interested in forming a band and making music collaboratively.
 
 # A User Can
 
 * Create a profile
-* Upload demo tracks (via demo manager page) and set them as favorites to be seen by other users in the artist browser.
+* Upload demo tracks (via demo manager page) and allow modal viewing of all user demos upon button click
 * Search and filter the artist browser depending on genre, usernames, favorites/all, etc.
 * View the artist browser and all audio files within associated with users.
-* View the selected artist profile to check out all demo's uploaded by the selected artist.
 
 # Stretch Goals
 
 * Allow users to create bands together and post album's demo's, etc. under the band name.
 * Allow users to DM eachother via websockets.
-* Integrate custom audio player so visuals will be better
+* Integrate custom audio player so visuals of audio player are better looking
 * Integrate bandcamp to allow bands to post and sell music, merch, etc.
+* Migrate to AWS S3 Cloud Storage
 
 # Technologies used
 
 * Amazon AWS S3 Cloud Storage for hosting all uploaded files remotely.
+* Heroku for deployment.
 * Active Storage for Amazon S3 and local hosting mp3/wav files.
 * Tailwindcss for styling.
