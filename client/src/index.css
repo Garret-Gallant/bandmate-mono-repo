@@ -3,32 +3,31 @@
 @tailwind utilities;
 
 @layer components {
-
   input {
     @apply px-2 py-2 relative rounded text-base
     outline-current to-teal-400 outline-none focus:outline-none focus:ring w-full
     flex flex-col ml-auto mr-auto border-2 pl-4 pr-4 mb-6 mt-2;
   }
-  
+
   button {
     @apply font-bold my-4 py-1 px-4 text-teal-400 border border-teal-400 rounded-full ml-4
     transform transition duration-500 hover:scale-110 hover:bg-cyan-900;
   }
 
   html {
-    @apply bg-hero min-h-screen
+    @apply bg-hero min-h-screen;
   }
 
   p {
-    @apply text-teal-400
+    @apply text-teal-400;
   }
 
   h4 {
-    @apply text-teal-400
+    @apply text-teal-400;
   }
 
   label {
-   @apply text-teal-400
+    @apply text-teal-400;
   }
 
   .landing-button {
@@ -42,7 +41,7 @@
   .signup-form {
     @apply relative bottom-10 flex flex-col ml-auto mr-auto border-2 w-fit pl-4 pr-4 mb-6;
   }
-  
+
   .nav-button {
     @apply font-bold my-4 py-1 px-4 text-teal-400 border border-teal-400 rounded-full ml-4
     grid-cols-6
@@ -50,15 +49,15 @@
   }
 
   .user-demo-card {
-    @apply border-2 mb-4 mt-4 flex flex-col ml-auto mr-auto w-60 pl-4 pr-4
+    @apply border-2 mb-4 mt-4 flex flex-col ml-auto mr-auto w-60 pl-4 pr-4;
   }
 
   .demo-button {
     @apply bg-red-700 text-rose-50 
-    relative text-center
+    relative text-center;
   }
 
   .profile-category {
-    @apply text-xl text-emerald-500
+    @apply text-xl text-emerald-500;
   }
 }

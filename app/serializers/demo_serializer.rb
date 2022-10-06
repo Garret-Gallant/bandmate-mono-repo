@@ -6,5 +6,4 @@ class DemoSerializer < ActiveModel::Serializer
   def audio_file
     rails_blob_path(object.audio_file, only_path: true) if object.audio_file.attached?
   end
-
 end

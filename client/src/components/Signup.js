@@ -8,7 +8,8 @@ const Signup = ({ toggleCreateAccount, onSignup }) => {
   const [instrument, setInstrument] = useState("");
   const [genre, setGenre] = useState("");
   const [bio, setBio] = useState("");
-  const defaultAvatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png?w=360'
+  const defaultAvatar =
+    "https://cdn-icons-png.flaticon.com/512/1077/1077114.png?w=360";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +25,7 @@ const Signup = ({ toggleCreateAccount, onSignup }) => {
         instrument,
         genre,
         bio,
-        avatar: defaultAvatar
+        avatar: defaultAvatar,
       }),
     })
       .then((res) => res.json())
@@ -34,44 +35,38 @@ const Signup = ({ toggleCreateAccount, onSignup }) => {
 
   return (
     <div>
-      <form className='signup-form'>
+      <form className="signup-form">
         <label>Name: </label>
-        <input
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-        />
+        <input type="text" onChange={(e) => setName(e.target.value)} />
         <label>Username: </label>
-        <input
-          type="text"
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        <input type="text" onChange={(e) => setUsername(e.target.value)} />
         <label>Password: </label>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <input type="password" onChange={(e) => setPassword(e.target.value)} />
         <label>Main Instrument: </label>
-        <input
-          type="text"
-          onChange={(e) => setInstrument(e.target.value)}
-        />
+        <input type="text" onChange={(e) => setInstrument(e.target.value)} />
         <label>Favorite Genre: </label>
-        <input
-          type="text"
-          onChange={(e) => setGenre(e.target.value)}
-        />
+        <input type="text" onChange={(e) => setGenre(e.target.value)} />
         <label>Add Bio? (This can be added/updated later) </label>
         <textarea
-          cols="10" rows="10"
-          class='h-20 border-2 focus:ring rounded'
-          name='paragraph-text'
+          cols="10"
+          rows="10"
+          class="h-20 border-2 focus:ring rounded"
+          name="paragraph-text"
           type="text"
           onChange={(e) => setBio(e.target.value)}
         />
         <button>
-        <NavLink to="/" className='right-2 text-center mb-4' onClick={handleSubmit}>Create Account</NavLink>
+          <NavLink
+            to="/"
+            className="right-2 text-center mb-4"
+            onClick={handleSubmit}
+          >
+            Create Account
+          </NavLink>
         </button>
-        <button className='landing-button' onClick={toggleCreateAccount}>Back to log in</button>
+        <button className="landing-button" onClick={toggleCreateAccount}>
+          Back to log in
+        </button>
       </form>
     </div>
   );
