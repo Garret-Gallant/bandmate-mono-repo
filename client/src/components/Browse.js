@@ -18,7 +18,10 @@ const Browse = () => {
   return(
     <>
     {users.map((user) => (
-      <BrowseList key={user.id} user={user} />
+      <BrowseList 
+        key={user.id} 
+        user={user}  
+      />
     ))}
     </>
   )

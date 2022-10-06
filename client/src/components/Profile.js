@@ -22,7 +22,7 @@ const Profile = ( { currentUser } ) => {
 
   const updateProfileDetails = () => {
     fetch('/user/:id')
-    // POST request to update profile
+    // PATCH request to update profile
   }
   
   

@@ -6,7 +6,7 @@ import Signup from "./Signup";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import Browse from "./Browse";
-import DemoManager from "./DemoManager";
+import DemoCompiler from "./DemoCompiler";
 import BandManager from "./BandManager";
 import Profile from "./Profile";
 import Footer from "./Footer";
@@ -15,7 +15,7 @@ function App() {
   const [createAccount, setCreateAccount] = useState(true);
   const [currentUser, setCurrentUser] = useState(null);
   const [allDemos, setAllDemos] = useState([]);
-
+  const userDemos = allDemos.filter(demo => demo.user.id === currentUser.id)
   // Above is passed as onLogin, onSignup to respective components 
 
   const toggleCreateAccount = () => {
@@ -43,6 +43,14 @@ function App() {
     })
   }, [])
 
+  const handleDelete = (id) => {
+    fetch(`/demos/${id}`, {
+      method: "DELETE"
+    })
+    .then((r) => r.json())
+    .then((data) => setAllDemos(data))
+  }
+
   return (
     <div>
       <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
@@ -64,8 +72,8 @@ function App() {
           }
         />
         <Route path="/" element={<Home />} />
-        <Route path="/browse" element={<Browse />} />
-        <Route path="/demo-manager" element={<DemoManager currentUser={currentUser} allDemos={allDemos} />} />
+        <Route path="/browse" element={<Browse handleDelete={handleDelete} />} />
+        <Route path="/demo-manager" element={<DemoCompiler currentUser={currentUser} userDemos={userDemos} handleDelete={handleDelete} />} />
         <Route path="/band-manager" element={<BandManager currentUser={currentUser} />} />
         <Route path="/user-profile" element={<Profile currentUser={currentUser} />} />
       </Routes>

@@ -1,11 +1,15 @@
-import NotFound from './NotFound'
+import { useState } from 'react'
 
 const BrowseList = ( { user } ) => {
 
   const { id, username, avatar, fav_genre, instrument } = user
 
-  const showUserDemos = () => {
+  const [modal, setModal] = useState(false)
 
+  const showUserDemos = () => {
+    return (
+      <>This is where modal will live</>
+    )
   }
 
   if (user.demos != 0) {
