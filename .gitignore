@@ -26,7 +26,7 @@
 !/tmp/storage/.keep
 
 # Ignore created users with admin credentials
-db/seeds.rb
+/db/seeds.rb
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
