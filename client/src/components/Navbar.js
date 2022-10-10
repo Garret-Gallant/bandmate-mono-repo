@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const NavBar = ({ currentUser, setCurrentUser }) => {
+  
   const handleLogout = () => {
     fetch("logout", { method: "DELETE" });
     setCurrentUser(null);

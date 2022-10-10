@@ -29,8 +29,8 @@ const Login = ({ toggleCreateAccount, onLogin }) => {
   }
 
   return (
-    <div>
-      <p>{errors}</p>
+    <div className='relative top-40'>
+      <p className='relative text-center mb-10'>{errors}</p>
       <form className="login-form">
         <label>Username: </label>
         <input type="text" onChange={(e) => setUsername(e.target.value)} />

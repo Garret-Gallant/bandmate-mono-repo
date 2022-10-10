@@ -30,11 +30,10 @@ const Signup = ({ toggleCreateAccount, onSignup }) => {
     })
       .then((res) => res.json())
       .then((user) => onSignup(user));
-    alert("Account created, you have been signed in to your new profile.");
   };
 
   return (
-    <div>
+    <div className='relative top-40'>
       <form className="signup-form">
         <label>Name: </label>
         <input type="text" onChange={(e) => setName(e.target.value)} />

@@ -21,11 +21,6 @@ function App() {
     setCreateAccount(!createAccount);
   };
 
-  console.log(currentUser);
-
-  // fetch all existing user data
-  // make a state dependent on current session
-
   useEffect(() => {
     fetch("/me").then((res) => {
       if (res.ok) {
@@ -48,6 +43,8 @@ function App() {
     })
       .then((r) => r.json())
       .then((data) => setAllDemos(data));
+
+      window.location.reload()
   };
 
   return (

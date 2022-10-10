@@ -22,7 +22,7 @@ const DemoCompiler = ({ currentUser, userDemos, handleDelete }) => {
       body: formData,
     });
 
-    alert("Your song has been successfully uploaded! Please refresh the page.");
+    window.location.reload();
   };
 
   return (
